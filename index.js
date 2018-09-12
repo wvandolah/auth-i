@@ -32,6 +32,7 @@ server.use(session(sessionConfig))
 server.use('/api/users', userController)
 
 server.get('/', (req, res) => {
+    req.session.page_views++
     res.send('Its Alive!');
   });
 
